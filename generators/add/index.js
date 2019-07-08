@@ -209,9 +209,8 @@ module.exports = class extends yeoman {
 		}
 		const serializationDestinationFile = path.join(
 			this.settings.ProjectPath,
-			'App_Config/Include',
-			this.settings.LayerPrefixedProjectName,
-			'serialization.config'
+			`App_Config/Include/z.${this.layer}/`,
+			`${this.layer}.${this.settings.ProjectName}.Serialization.config`
 		);
 
 		this.fs.copyTpl(this.templatePath('_serialization.config'), this.destinationPath(serializationDestinationFile), this.templatedata);
