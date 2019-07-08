@@ -11,13 +11,13 @@ Function Add-BuildConfigurations {
     {    
         $configurationToAdd = $configuration.FullName.Replace(" ","")
         $addProjectBuildConfiguration = @("  <PropertyGroup Condition=`"'`$(Configuration)|`$(Platform)' == '$configurationToAdd'`">",
-                                  "`t<DebugSymbols>true</DebugSymbols>",
-                                  "`t<OutputPath>bin\</OutputPath>",
-                                  "`t<DefineConstants>DEBUG;TRACE</DefineConstants>",
-                                  "`t<DebugType>full</DebugType>",
-                                  "`t<PlatformTarget>AnyCPU</PlatformTarget>",
-                                  "`t<ErrorReport>prompt</ErrorReport>",
-                                  "`t<CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>",
+                                  "`t  <DebugSymbols>true</DebugSymbols>",
+                                  "`t  <OutputPath>bin\</OutputPath>",
+                                  "`t  <DefineConstants>DEBUG;TRACE</DefineConstants>",
+                                  "`t  <DebugType>full</DebugType>",
+                                  "`t  <PlatformTarget>AnyCPU</PlatformTarget>",
+                                  "`t  <ErrorReport>prompt</ErrorReport>",
+                                  "`t  <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>",
                                   "  </PropertyGroup>")
 
         Write-Output "Writing $configurationToAdd to $projectPath"                          
